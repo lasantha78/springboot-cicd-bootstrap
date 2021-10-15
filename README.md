@@ -17,6 +17,6 @@ docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 -v sonar-data:/opt/sona
 	-	Sonarqube token
 	-   Docker Hub password   
 
-# Improvements to Jenkins server
+# Future Improvements to Jenkins server
 1. Use webhooks to initiate the pipeline
 2. Configure Jenkins agents  
