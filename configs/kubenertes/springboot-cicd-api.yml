@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-cicd-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springboot-cicd-api
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: springboot-cicd-api
+    spec:      
+      containers:
+      - name: spring-simple-api
+        image: "lasanthar78/springboot-cicd-bootstrap"
+        ports:
+          - name: http
+            containerPort: 8100        
+        envFrom:
+        - configMapRef:
+            name: "springboot-cicd-api-config"
+        - secretRef:
+            name: "common-secrets"
+        livenessProbe:
+          httpGet:
+            path: /api/echo
+            port: http
+          initialDelaySeconds: 180
+          timeoutSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /api/echo
+            port: http
+          initialDelaySeconds: 180
+          timeoutSeconds: 10
+        resources:
+            requests:
+              cpu: 200m
+              memory: 1024Mi
+            limits:
+              cpu: 200m
+              memory: 1024Mi
+      
