@@ -10,11 +10,11 @@ import com.example.demo.controller.ApiController;
 @SpringBootTest
 class DemoApplicationTests {
 	@Autowired
-	ApiController contoller;
+	ApiController controller;
 
 	@Test
 	void contextLoads() {
-		Assertions.assertThat(contoller).isNotNull();
+		Assertions.assertThat(controller).isNotNull();
 	}
 
 }

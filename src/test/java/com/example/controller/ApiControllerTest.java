@@ -1,14 +1,15 @@
 package com.example.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 
 import com.example.demo.controller.ApiController;
 
-class ApiControllerTest extends Mockito {
+class ApiControllerTest {
 
 	@Mock
 	ApiController mockApi;

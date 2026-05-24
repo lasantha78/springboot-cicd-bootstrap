@@ -9,8 +9,8 @@ pipeline {
       VERSION = 'latest'  	  
   }
   tools {
-  	  jdk	'JDK11'
-      maven 'maven-3.8.3'
+  	  jdk	'JDK26'
+      maven 'maven-3.9.16'
   }
   
   stages {  	    	  
